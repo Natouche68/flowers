@@ -61,7 +61,7 @@
 <style>
 	.flower {
 		transform-origin: 50% 100%;
-		animation: flower-animation 3s ease forwards;
+		animation: flower-animation 3s ease both;
 	}
 
 	@keyframes flower-animation {
@@ -76,6 +76,18 @@
 
 	.leaf {
 		fill: var(--leaf-color);
+		transform-origin: 15% 100%;
+		animation: leaf-animation 3s 1s ease both;
+	}
+
+	@keyframes leaf-animation {
+		from {
+			scale: 0;
+		}
+
+		to {
+			scale: 1;
+		}
 	}
 
 	.stem {
