@@ -8,8 +8,8 @@
 </script>
 
 <g
-	transform="translate({x} {y}) rotate({rotation}) scale({scale})"
-	style="--leaf-color: {leafColor}; --petals-color: {petalsColor};"
+	transform="translate({x} {y}) rotate({rotation})"
+	style="--leaf-color: {leafColor}; --petals-color: {petalsColor}; --scale: {scale};"
 	class="flower"
 >
 	<path
@@ -59,6 +59,21 @@
 </g>
 
 <style>
+	.flower {
+		transform-origin: 50% 100%;
+		animation: flower-animation 3s ease forwards;
+	}
+
+	@keyframes flower-animation {
+		from {
+			scale: 0;
+		}
+
+		to {
+			scale: var(--scale);
+		}
+	}
+
 	.leaf {
 		fill: var(--leaf-color);
 	}
