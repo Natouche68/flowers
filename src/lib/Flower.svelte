@@ -9,7 +9,11 @@
 
 <g
 	transform="translate({x} {y}) rotate({rotation})"
-	style="--leaf-color: {leafColor}; --petals-color: {petalsColor}; --scale: {scale};"
+	style="
+		--leaf-color: {leafColor};
+		--petals-color: {petalsColor};
+		--scale: {scale};
+		--rotation-time: {Math.random() * 4 + 8}s;"
 	class="flower"
 >
 	<path
@@ -17,48 +21,56 @@
 		class="leaf"
 		transform-origin="35 70"
 		fill="url(#left-leaves-gradient)"
+		style="--rotation-time: {Math.random() * 3 + 2}s;"
 	/>
 	<path
 		d="M36 69.3891C36.9639 61.5641 37.6352 56.4958 49.8037 52.9878C50.6503 62.9595 46.89 66.6756 36 69.3891Z"
 		class="leaf"
 		transform-origin="35 70"
 		fill="url(#right-leaves-gradient)"
+		style="--rotation-time: {Math.random() * 3 + 2}s;"
 	/>
 	<path
 		d="M37.7421 107.96C26.1965 105.65 18.7236 104.083 14.8601 85.5689C29.8051 85.4231 34.9188 91.4387 37.7421 107.96Z"
 		class="leaf"
 		transform-origin="35 105"
 		fill="url(#left-leaves-gradient)"
+		style="--rotation-time: {Math.random() * 3 + 2}s;"
 	/>
 	<path
 		d="M38 118.97C39.4396 107.283 40.4421 99.7142 58.6151 94.4753C59.8796 109.367 54.2637 114.917 38 118.97Z"
 		class="leaf"
 		transform-origin="35 110"
 		fill="url(#right-leaves-gradient)"
+		style="--rotation-time: {Math.random() * 3 + 2}s;"
 	/>
 	<path
 		d="M39.4152 165.439C28.0508 162.358 20.6999 160.294 18.0881 141.562C33.0092 142.42 37.7075 148.765 39.4152 165.439Z"
 		class="leaf"
 		transform-origin="38 160"
 		fill="url(#left-leaves-gradient)"
+		style="--rotation-time: {Math.random() * 3 + 2}s;"
 	/>
 	<path
 		d="M39 171.893C40.802 160.257 42.0391 152.723 60.3661 148.051C61.1673 162.975 55.3818 168.348 39 171.893Z"
 		class="leaf"
 		transform-origin="38 160"
 		fill="url(#right-leaves-gradient)"
+		style="--rotation-time: {Math.random() * 3 + 2}s;"
 	/>
 	<path
 		d="M39.0642 204.399C34.1512 202.264 30.978 200.849 31.0371 192.245C37.6978 193.614 39.3946 196.781 39.0642 204.399Z"
 		class="leaf"
 		transform-origin="40 205"
 		fill="url(#left-leaves-gradient)"
+		style="--rotation-time: {Math.random() * 3 + 2}s;"
 	/>
 	<path
 		d="M41 209.272C41.6803 203.75 42.154 200.173 50.7419 197.697C51.3394 204.735 48.6856 207.357 41 209.272Z"
 		class="leaf"
 		transform-origin="40 205"
 		fill="url(#right-leaves-gradient)"
+		style="--rotation-time: {Math.random() * 3 + 2}s;"
 	/>
 	<line
 		x1="41.3704"
@@ -103,30 +115,60 @@
 <style>
 	.flower {
 		transform-origin: 50% 100%;
-		animation: flower-animation 3s ease both;
+		animation:
+			flower-appearing 3s ease both,
+			flower-rotating var(--rotation-time) 3s ease infinite;
 	}
 
-	@keyframes flower-animation {
+	@keyframes flower-appearing {
 		from {
 			scale: 0;
+			rotate: 0deg;
 		}
 
 		to {
 			scale: var(--scale);
+			rotate: -2deg;
+		}
+	}
+
+	@keyframes flower-rotating {
+		0%,
+		100% {
+			rotate: -2deg;
+		}
+
+		50% {
+			rotate: 2deg;
 		}
 	}
 
 	.leaf {
-		animation: leaf-animation 3s 1s ease both;
+		animation:
+			leaf-appearing 3s 1s ease both,
+			leaf-rotating var(--rotation-time) 3s ease infinite;
 	}
 
-	@keyframes leaf-animation {
+	@keyframes leaf-appearing {
 		from {
 			scale: 0;
+			rotate: 0deg;
 		}
 
 		to {
 			scale: 1;
+			rotate: -2deg;
+		}
+	}
+
+	@keyframes leaf-rotating {
+		0%,
+		100% {
+			rotate: -2deg;
+		}
+
+		50% {
+			rotate: 2deg;
 		}
 	}
 
