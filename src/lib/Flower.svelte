@@ -10,8 +10,6 @@
 <g
 	transform="translate({x} {y}) rotate({rotation})"
 	style="
-		--leaf-color: {leafColor};
-		--petals-color: {petalsColor};
 		--scale: {scale};
 		--rotation-time: {Math.random() * 4 + 8}s;"
 	class="flower"
@@ -88,8 +86,8 @@
 
 	<defs>
 		<linearGradient id="left-leaves-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-			<stop offset="0%" stop-color="#00ff85ff" />
-			<stop offset="100%" stop-color="#00ff8500" />
+			<stop offset="0%" stop-color="{leafColor}ff" />
+			<stop offset="100%" stop-color="{leafColor}00" />
 		</linearGradient>
 		<linearGradient
 			id="right-leaves-gradient"
@@ -98,16 +96,16 @@
 			x2="100%"
 			y2="0%"
 		>
-			<stop offset="0%" stop-color="#00ff8500" />
-			<stop offset="100%" stop-color="#00ff85ff" />
+			<stop offset="0%" stop-color="{leafColor}00" />
+			<stop offset="100%" stop-color="{leafColor}ff" />
 		</linearGradient>
 		<linearGradient id="stem-gradient" x1="50%" y1="0%" x2="50%" y2="100%">
-			<stop offset="0%" stop-color="#00ff85ff" />
-			<stop offset="100%" stop-color="#00ff8500" />
+			<stop offset="0%" stop-color="{leafColor}ff" />
+			<stop offset="100%" stop-color="{leafColor}00" />
 		</linearGradient>
 		<linearGradient id="petals-gradient" x1="50%" y1="0%" x2="50%" y2="100%">
-			<stop offset="0%" stop-color="#f8005911" />
-			<stop offset="80%" stop-color="#f80059ff" />
+			<stop offset="0%" stop-color="{petalsColor}11" />
+			<stop offset="80%" stop-color="{petalsColor}ff" />
 		</linearGradient>
 	</defs>
 </g>
