@@ -10,7 +10,7 @@
 	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" class="flower">
 		<Flower x={86} {leafColor} {petalsColor} />
 	</svg>
-	<div class="controls">
+	<form class="controls" method="POST">
 		<h1 class="title">Customize Flowers</h1>
 
 		<div class="input-group">
@@ -40,7 +40,9 @@
 				bind:value={backgroundColor}
 			/>
 		</div>
-	</div>
+
+		<button type="submit" class="button">See the result</button>
+	</form>
 </div>
 
 <style>
@@ -90,6 +92,20 @@
 		height: 28px;
 		border: solid 3px #c1d2ec;
 		border-radius: 12px;
+		cursor: pointer;
+	}
+
+	.button {
+		margin: 16px;
+		width: calc(100% - 16px * 2);
+		font-family: "Poppins", sans-serif;
+		font-size: 24px;
+		padding: 8px 16px;
+		background: #c1d2ec;
+		color: #001535;
+		border: none;
+		border-radius: 16px;
+		cursor: pointer;
 	}
 
 	@media screen and (orientation: portrait) {

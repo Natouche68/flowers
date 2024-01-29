@@ -1,13 +1,30 @@
 <script lang="ts">
+	import type { PageData } from "./$types";
 	import Flower from "$lib/Flower.svelte";
 	import EditIcon from "$lib/EditIcon.svelte";
+
+	export let data: PageData;
 </script>
 
-<div class="app">
+<div class="app" style="--bg-color: {data.backgroundColor};">
 	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" class="flowers">
-		<Flower x={86} />
-		<Flower x={80} y={-30} rotation={-20} scale={0.8} />
-		<Flower x={80} y={20} rotation={16} scale={0.84} />
+		<Flower x={86} petalsColor={data.petalsColor} leafColor={data.leafColor} />
+		<Flower
+			x={80}
+			y={-30}
+			rotation={-20}
+			scale={0.8}
+			petalsColor={data.petalsColor}
+			leafColor={data.leafColor}
+		/>
+		<Flower
+			x={80}
+			y={20}
+			rotation={16}
+			scale={0.84}
+			petalsColor={data.petalsColor}
+			leafColor={data.leafColor}
+		/>
 	</svg>
 
 	<a class="customize" href="/customize">
@@ -21,7 +38,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		background: #001535;
+		background: var(--bg-color);
 	}
 
 	.flowers {

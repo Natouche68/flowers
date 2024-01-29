@@ -1,10 +1,10 @@
-<script>
-	export let x = 0;
-	export let y = 0;
-	export let rotation = 0;
-	export let scale = 1;
-	export let leafColor = "#00ff85";
-	export let petalsColor = "#f80059";
+<script lang="ts">
+	export let x: number = 0;
+	export let y: number = 0;
+	export let rotation: number = 0;
+	export let scale: number = 1;
+	export let leafColor: string = "#00ff85";
+	export let petalsColor: string = "#f80059";
 </script>
 
 <g
