@@ -1,9 +1,12 @@
 <script lang="ts">
+	import type { PageData } from "./$types";
 	import Flower from "$lib/Flower.svelte";
 
-	let petalsColor = "#f80059";
-	let leafColor = "#00ff85";
-	let backgroundColor = "#001535";
+	export let data: PageData;
+
+	let petalsColor = data.petalsColor;
+	let leafColor = data.leafColor;
+	let backgroundColor = data.backgroundColor;
 </script>
 
 <div class="app" style="--bg-color: {backgroundColor};">

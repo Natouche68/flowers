@@ -27,7 +27,16 @@
 		/>
 	</svg>
 
-	<a class="customize" href="/customize">
+	<a
+		class="customize"
+		href="/customize?petalsColor={data.petalsColor.replace(
+			'#',
+			''
+		)}&leafColor={data.leafColor.replace(
+			'#',
+			''
+		)}&backgroundColor={data.backgroundColor.replace('#', '')}"
+	>
 		<EditIcon />
 	</a>
 </div>
