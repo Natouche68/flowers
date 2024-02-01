@@ -142,5 +142,9 @@
 		.flower {
 			width: 60vw;
 		}
+
+		.controls {
+			width: 80vw;
+		}
 	}
 </style>
