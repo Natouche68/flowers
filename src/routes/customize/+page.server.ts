@@ -5,11 +5,13 @@ export const load: PageServerLoad = ({ url }) => {
 	let petalsColor = url.searchParams.get("petalsColor") || "f80059";
 	let leafColor = url.searchParams.get("leafColor") || "00ff85";
 	let backgroundColor = url.searchParams.get("backgroundColor") || "001535";
+	let message = url.searchParams.get("message") || "";
 
 	return {
 		petalsColor: "#" + petalsColor,
 		leafColor: "#" + leafColor,
 		backgroundColor: "#" + backgroundColor,
+		message,
 	};
 };
 
@@ -22,10 +24,13 @@ export const actions = {
 			"#",
 			""
 		);
+		const message = data.get("message");
 
 		redirect(
 			303,
-			`/?petalsColor=${petalsColor}&leafColor=${leafColor}&backgroundColor=${backgroundColor}`
+			`/?petalsColor=${petalsColor}&leafColor=${leafColor}&backgroundColor=${backgroundColor}${
+				message ? `&message=${message}` : ""
+			}`
 		);
 	},
 } satisfies Actions;

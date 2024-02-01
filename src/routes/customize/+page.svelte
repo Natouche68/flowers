@@ -7,6 +7,7 @@
 	let petalsColor = data.petalsColor;
 	let leafColor = data.leafColor;
 	let backgroundColor = data.backgroundColor;
+	let message = data.message;
 </script>
 
 <div class="app" style="--bg-color: {backgroundColor};">
@@ -42,6 +43,10 @@
 				id="background-color"
 				bind:value={backgroundColor}
 			/>
+		</div>
+		<div class="input-group">
+			<label for="message">Message</label>
+			<input type="text" name="message" id="message" bind:value={message} />
 		</div>
 
 		<button type="submit" class="button">See the result</button>
@@ -98,6 +103,24 @@
 		cursor: pointer;
 	}
 
+	.input-group input[type="text"] {
+		width: 50%;
+		background: transparent;
+		color: #c1d2ec;
+		font-family: "Poppins", sans-serif;
+		font-size: 18px;
+		outline: none;
+		border: none;
+		border-bottom: solid 2px #c1d2ec;
+		transition: all 0.4s ease;
+	}
+
+	.input-group input[type="text"]:focus {
+		font-weight: 600;
+		background: #c1d2ec;
+		color: var(--bg-color);
+	}
+
 	.button {
 		margin: 16px;
 		width: calc(100% - 16px * 2);
@@ -105,7 +128,7 @@
 		font-size: 24px;
 		padding: 8px 16px;
 		background: #c1d2ec;
-		color: #001535;
+		color: var(--bg-color);
 		border: none;
 		border-radius: 16px;
 		cursor: pointer;
