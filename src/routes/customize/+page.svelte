@@ -132,6 +132,11 @@
 		border: none;
 		border-radius: 16px;
 		cursor: pointer;
+		transition: all 0.4s ease;
+	}
+
+	.button:hover {
+		transform: scale(1.08);
 	}
 
 	@media screen and (orientation: portrait) {
